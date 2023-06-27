@@ -1,12 +1,12 @@
 #https://en.wikipedia.org/wiki/Lagrange_polynomial
 
 import matplotlib.pyplot as plt
-from random import sample
+from random import sample, randint
 
 
 def plot_points(num_of_points, ceiling):
     x_points = sample(range(0,ceiling), num_of_points)
-    y_points = sample(range(0,ceiling), num_of_points)
+    y_points = [randint(0, ceiling) for i in range(0, num_of_points)]
     points = [(x_points[i], y_points[i]) for i in range(0, num_of_points)]
     print(points)
 
@@ -18,5 +18,6 @@ def plot_points(num_of_points, ceiling):
 
 
 
-plot_points(3, 10)
+plot_points(int(input("Number of points: ")), 10)
+
 
